@@ -2,6 +2,7 @@ package com.extrade.usermanagement.entities;
 
 import jakarta.persistence.*;
 import jdk.jfr.DataAmount;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
