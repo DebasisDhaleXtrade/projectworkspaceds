@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+
+  <groupId>extrade.com</groupId>
+  <artifactId>extrade-parent</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <name>extrade-parent</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <spring-boot.version>3.2.5</spring-boot.version>
+    <spring-cloud.version>2023.0.1</spring-cloud.version>
+    <mysql-connector.version>8.3.0</mysql-connector.version>
+    <project-lombok.version>1.18.32</project-lombok.version>
+    <thymeleaf-layout.version>3.3.0</thymeleaf-layout.version>
+    <jakarta-api-validation.version>3.0.2</jakarta-api-validation.version>
+    <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
+    <thymeleaf-security.version>3.1.2.RELEASE</thymeleaf-security.version>
+    <spring-cloud-openfeign.version>4.1.1</spring-cloud-openfeign.version>
+    <openapi-webmvc-ui.version>2.5.0</openapi-webmvc-ui.version>
+  </properties>
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <url>https://repo.s-teams.us/artifactory/libs-release-local</url>
+    </repository>
+  </distributionManagement>
+
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-dependencies</artifactId>
+       <version>${spring-cloud.version}</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-web</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-configuration-processor</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-data-jpa</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-security</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-thymeleaf</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-actuator</artifactId>
+       <version>${spring-boot.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-openfeign</artifactId>
+       <version>${spring-cloud-openfeign.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.springdoc</groupId>
+       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+       <version>${openapi-webmvc-ui.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>jakarta.validation</groupId>
+       <artifactId>jakarta.validation-api</artifactId>
+       <version>${jakarta-api-validation.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.hibernate.validator</groupId>
+       <artifactId>hibernate-validator</artifactId>
+       <version>${hibernate-validator.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.thymeleaf.extras</groupId>
+       <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+       <version>${thymeleaf-security.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>nz.net.ultraq.thymeleaf</groupId>
+       <artifactId>thymeleaf-layout-dialect</artifactId>
+       <version>${thymeleaf-layout.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>com.mysql</groupId>
+       <artifactId>mysql-connector-j</artifactId>
+       <version>${mysql-connector.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.projectlombok</groupId>
+       <artifactId>lombok</artifactId>
+       <version>${project-lombok.version}</version>
+       <optional>true</optional>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <executions>
+            <execution>
+              <id>repackage</id>
+              <phase>package</phase>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <excludes>
+              <exclude>
+                <groupId> org.projectlombok </groupId>
+              <artifactId>lombok</artifactId>
+              </exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/two-colum-page-layout.html}">
+
+<head>
+    <title>Custom Registration</title>
+</head>
+<th:block layout:fragment="shop_left_sidebar">
+    <h1 style="color:blue">Side menu goes here</h1>
+</th:block>
+<th:block layout:fragment="shop_right_sidebar">
+   <h1 style="color:red" >Store page Content</h1>
+</th:block>
+</html>
