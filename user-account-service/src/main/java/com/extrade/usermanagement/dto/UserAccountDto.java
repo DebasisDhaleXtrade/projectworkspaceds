@@ -16,6 +16,8 @@ public class UserAccountDto {
     private int mobileNoOtpVerificationStatus;
     private int emailAddressOtpVerificationStatus;
     private String status;
+    private String password;
+
 
 
 }
